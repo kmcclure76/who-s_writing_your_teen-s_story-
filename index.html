@@ -168,9 +168,6 @@
   .check-list li { border-bottom: 1px solid var(--rule); }
   .check-list label { display: flex; gap: 12px; align-items: flex-start; padding: 12px 4px; cursor: pointer; }
   .check-list input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--accent); flex: none; }
-  .meter { height: 12px; background: var(--paper-2); border-radius: 999px; overflow: hidden; border: 1px solid var(--rule); margin: 18px 0 8px; }
-  .meter span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--sage), var(--accent)); transition: width .35s; }
-  .result { font-weight: 500; min-height: 3em; }
 
   /* tabs */
   .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
@@ -227,8 +224,6 @@
   .res p { margin: 2px 0 0; font-size: .95rem; color: var(--ink-soft); }
   @media (max-width: 520px) { .res li { grid-template-columns: 1fr; gap: 2px; } }
 
-  .help { background: var(--ink); color: var(--paper); }
-  .help a { color: var(--paper); }
   footer { padding: 36px 0 60px; font-size: .88rem; color: var(--ink-soft); }
   .theme-toggle { position: fixed; right: 16px; bottom: 16px; z-index: 30; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: var(--card); color: var(--ink); cursor: pointer; box-shadow: var(--shadow); font-size: 1.1rem; }
 
@@ -244,18 +239,17 @@
 
 <nav class="top" aria-label="Sections">
   <div class="wrap">
-    <a href="#reading">Why read</a>
-    <a href="#discern">Discernment</a>
-    <a href="#how">Six habits</a>
-    <a href="#booklist">Book list</a>
     <a href="#formation">Filters vs. formation</a>
     <a href="#numbers">By the numbers</a>
     <a href="#product">You are the product</a>
-    <a href="#check">Home check-up</a>
     <a href="#ai">AI chatbots</a>
     <a href="#books">Books</a>
     <a href="#pause">Pause questions</a>
     <a href="#plan">Family plan</a>
+    <a href="#reading">Why read</a>
+    <a href="#discern">Discernment</a>
+    <a href="#how">Six habits</a>
+    <a href="#booklist">Book list</a>
     <a href="#scripture">Scripture</a>
     <a href="#resources">Resources</a>
   </div>
@@ -265,7 +259,7 @@
   <div class="wrap">
     <div class="eyebrow">Parent Seminar · Technology &amp; Discernment</div>
     <h1>Who's Writing Your Teen's <em>Story?</em></h1>
-    <p class="sub">Teaching discernment with books and tech. A take-home guide to raising readers, teaching discernment, and understanding how apps are built to hold our teens' attention.</p>
+    <p class="sub">Teaching discernment with books and tech. A take-home guide to understanding how apps are built to hold our teens' attention, raising readers, and teaching discernment.</p>
     <div class="pill-row">
       <span class="pill">For parents of teens</span>
       <span class="pill">Faith-centered</span>
@@ -276,93 +270,9 @@
 
 <main>
 
-<section id="reading">
-  <div class="wrap">
-    <div class="eyebrow">Part one · Books</div>
-    <h2>This session is about books and technology. At a deeper level, it's about discernment.</h2>
-    <p class="lead">"Study to show thyself approved" (2 Timothy 2:15). The word means <em>be diligent</em>. Helping our kids read well is part of that diligence.</p>
-
-    <h3 style="margin-top:34px">Why stories matter, even for older kids</h3>
-    <div class="research">
-      <div class="card">
-        <blockquote>Brain scans showed that children who were read to more at home had stronger activity in areas for mental imagery and for understanding words and stories.</blockquote>
-        <p class="who"><a href="https://www.sciencedaily.com/releases/2015/04/150425215617.htm" target="_blank" rel="noopener">Cincinnati Children's study, 2015</a> (preschoolers ages 3–5)</p>
-      </div>
-      <div class="card">
-        <blockquote>"The single most important activity for building the knowledge required for eventual success in reading is reading aloud to children."</blockquote>
-        <p class="who"><em>Becoming a Nation of Readers</em>, 1985</p>
-      </div>
-      <div class="card">
-        <blockquote>"Across 70 experiments, novels did more to boost concern for and understanding of others."</blockquote>
-        <p class="who">Adam Grant, organizational psychologist, <a href="https://adamgrant.substack.com/p/the-case-for-reading-fiction" target="_blank" rel="noopener">"The Case for Reading Fiction," 2025</a></p>
-      </div>
-      <div class="card">
-        <blockquote>"When God contemplated all the possible ways… to transmit and preserve his revelation to the world, he chose a book."</blockquote>
-        <p class="who">John Piper</p>
-      </div>
-    </div>
-
-    <p class="story">Not just reading — <em>interacting</em>. There's a difference between reading the words on a page and engaging with your child about the words on the page.</p>
-
-    <h3 style="margin-top:34px">Why read fiction?</h3>
-    <div class="grid g3" style="margin-top:14px">
-      <div class="card"><h3>It shares timeless truth</h3><p style="margin:0;color:var(--ink-soft)">Great books show us human nature and how good triumphs over evil. We cheer for Quasimodo because we know what it's like to feel like an outcast. We love Frodo because he perseveres against great evil.</p></div>
-      <div class="card"><h3>It trains us to see through people</h3><p style="margin:0;color:var(--ink-soft)">A villain like Count Fosco in <em>The Woman in White</em> sticks with us because we've all met someone with a polished veneer who is deceitful underneath.</p></div>
-      <div class="card"><h3>It builds compassion</h3><p style="margin:0;color:var(--ink-soft)">On a screen, you observe Katniss or the March sisters. In a book, you get inside their heads. Slowly, that builds the capacity to see perspectives that aren't yours.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="discern">
-  <div class="wrap">
-    <div class="eyebrow">The number one thing</div>
-    <h2>Discernment, discernment, discernment.</h2>
-    <p class="lead">This is what we most want to pass on to our kids as they read.</p>
-    <div class="discern-list">
-      <div class="discern-item"><div><h3>Authors can be wrong.</h3><p>Every book outside the Bible is written by a fallible person, even favorites like C.S. Lewis, Paul Tripp and A.W. Tozer. We always come to a book asking, "What does Scripture say?"</p></div></div>
-      <div class="discern-item"><div><h3>Viewpoints should align with Scripture.</h3><p>Look at morally gray characters, flaws, and good versus evil through the lens of Scripture. Does good triumph? Is the author clear about good and evil? Is a viewpoint that contradicts Scripture presented positively?</p></div></div>
-      <div class="discern-item"><div><h3>Good and evil should be clear.</h3><p>In <em>The Lord of the Rings</em>, it's clear who the good guy is and who the bad guy is. And it's clear <em>why</em>.</p></div></div>
-    </div>
-    <div class="bridge"><strong>The same questions work for tech.</strong> YouTubers, influencers, podcasters and AI chatbots are "authors" too. Teach your teen to ask of every creator: Can they be wrong? Does this line up with Scripture? Is it honest about good and evil?</div>
-  </div>
-</section>
-
-<section id="how">
-  <div class="wrap">
-    <div class="eyebrow">So what does this mean for your family?</div>
-    <h2>Six habits that build readers</h2>
-    <div class="habits">
-      <div class="card habit"><span class="n">Habit 1</span><h3>Read in front of your teen</h3><p>If we don't value reading, our kids won't either. Let them see you reading for pleasure: not for work or a Bible study, but because you chose it.</p><p>It doesn't matter much <em>what</em> you read. It matters that they see you do it, especially as phones take more of our downtime.</p></div>
-      <div class="card habit"><span class="n">Habit 2</span><h3>Read with your teen</h3><p>Talk about books together. "Buy your child a book every month and take them on a date to discuss it. Talk about the characters like they're real people. Argue about their decisions." <span style="font-size:.85rem">(shared on Instagram by @the_girl_zora_)</span></p><p>Not only Bible studies, but books about culture, classics and biographies.</p></div>
-      <div class="card habit"><span class="n">Habit 3</span><h3>Read to them, yes, even teens</h3><p>Use the voices. Read some books a little above their level. Don't stop when they learn to read on their own.</p><p>Reading aloud lets you talk through harder books, like <em>Pride and Prejudice</em> or <em>The Count of Monte Cristo</em>, that teens often get bogged down in alone.</p></div>
-      <div class="card habit"><span class="n">Habit 4</span><h3>Let them choose</h3><p>Encourage quality, but it's okay if your middle schooler loves graphic novels or your daughter loves fantasy. They don't have to like the same books you do.</p></div>
-      <div class="card habit"><span class="n">Habit 5</span><h3>Take them to the library</h3><p>Weekly when they're small, a couple of times a month as teens. Investing in reading doesn't stop in elementary school.</p></div>
-      <div class="card habit"><span class="n">Habit 6</span><h3>Start a family reading time</h3><p>Everyone sits together and reads their own book. Pair it with an evening screen cutoff: "We're all going to read now."</p></div>
-    </div>
-    <p class="story">"My dad read to us all the way until we were teenagers. I still remember those evenings as some of the best times of my life. And I remember the books too."</p>
-    <p class="note" style="font-size:.95rem">How much can 15 minutes a day add up to? John Piper's math: 200 words a minute × 15 minutes × 365 days ≈ 1.1 million words, about 12 substantial books a year. <a href="#reading-math">Try the calculator</a>.</p>
-  </div>
-</section>
-
-<section id="booklist">
-  <div class="wrap">
-    <div class="eyebrow">What should they read?</div>
-    <h2>A book list for families</h2>
-    <p class="lead">Tap a category to filter. Tap ☆ to save books to your family's list on this device.</p>
-    <div class="chips" id="bookChips" role="group" aria-label="Filter by category"></div>
-    <p class="book-why" id="bookWhy" aria-live="polite"></p>
-    <ul class="books" id="bookGrid"></ul>
-    <div class="list-bar">
-      <span id="savedCount">No books saved yet.</span>
-      <button class="btn ghost" id="showSaved">Show my list</button>
-      <button class="btn ghost" id="printBooks">Print</button>
-    </div>
-  </div>
-</section>
-
 <section id="formation">
   <div class="wrap">
-    <div class="eyebrow">The big idea</div>
+    <div class="eyebrow">Part one · Technology</div>
     <h2>Filters guard the door. Habits shape the heart.</h2>
     <p class="lead">Safeguards like filters, screen-time limits and accountability software matter, so keep them. But a filter only answers <em>what</em> our teens see. It can't answer <em>who they are becoming</em>.</p>
     <div class="contrast">
@@ -479,24 +389,11 @@
   </div>
 </section>
 
-<section id="check">
-  <div class="wrap">
-    <div class="eyebrow">Interactive</div>
-    <h2>A quick home check-up</h2>
-    <p class="lead">Check anything that's true in your home right now. This is just a conversation starter, not a diagnosis.</p>
-    <div class="card">
-      <ul class="check-list" id="checkList"></ul>
-      <div class="meter" aria-hidden="true"><span id="meterBar"></span></div>
-      <p class="result" id="checkResult" aria-live="polite">Check the statements that fit your family.</p>
-    </div>
-  </div>
-</section>
-
 <section id="ai">
   <div class="wrap">
     <div class="eyebrow">The new frontier</div>
-    <h2>What parents need to know about AI chatbots</h2>
-    <p class="lead">Chatbots like ChatGPT, Character.AI, Snapchat's My AI and Meta AI can help with homework. But many are also built to act like a friend, and that's where parents need to pay attention.</p>
+    <h2>What is generative AI, and where do chatbots fit?</h2>
+    <p class="lead"><em>Generative AI</em> is technology that creates new content: writing, images, voices, even video. It learns patterns from enormous amounts of text and media, then predicts what should come next. It doesn't "know" things the way a person does, and it can sound confident while being completely wrong.</p>
 
     <div class="stats">
       <div class="stat"><div class="num">64%</div><p>of U.S. teens use AI chatbots; about 3 in 10 use them daily.</p><a href="https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/" target="_blank" rel="noopener">Pew Research, Dec 2025</a></div>
@@ -504,13 +401,17 @@
       <div class="stat"><div class="num">1 in 3</div><p>teens use AI companions for social connection, from friendship and emotional support to romantic role-play.</p><a href="https://commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds" target="_blank" rel="noopener">Common Sense Media, Jul 2025</a></div>
     </div>
 
-    <ol class="ai-list">
-      <li><h3>Tools and companions are different</h3><p>Asking a chatbot to explain algebra is like using a calculator. An AI "companion" is designed to be a friend, confidant or even a boyfriend or girlfriend. It has a name, remembers past conversations and may message first.</p></li>
-      <li><h3>It's built for engagement, too</h3><p>Companions are always available, always patient and always agreeable. Real friendships include friction, disagreement and forgiveness, which is how we grow. A friend who never says no doesn't teach any of that.</p></li>
-      <li><h3>Teens can't easily tell real empathy from simulated empathy</h3><p>The American Psychological Association warned in 2025 that teens may trust AI characters that act like friends or mentors more than they should, and urged the industry not to repeat social media's mistakes.</p></li>
-      <li><h3>The risks are real, and regulators are responding</h3><p>Lawsuits have linked companion chatbots to teen self-harm and sexual content. In 2025 the FTC opened an inquiry into seven companies' companion bots, and Character.AI ended open-ended chats for users under 18. Twelve states had passed companion-chatbot laws by fall 2026.</p></li>
-      <li><h3>It's often hidden inside apps they already use</h3><p>AI chat is built into Snapchat, Instagram, WhatsApp and many games. Your teen may be using a chatbot without downloading anything new.</p></li>
-    </ol>
+    <div class="card">
+      <h3>Chatbots are the conversational kind</h3>
+      <p>ChatGPT, Gemini, Meta AI, Snapchat's My AI and others let you type or talk to the AI as if it were a person. Teens mostly use them in two ways:</p>
+      <ul style="margin:0 0 1em;padding-left:1.1em">
+        <li><strong>As a tool:</strong> help with homework, explaining a concept, brainstorming. Think of it like a very fast, sometimes-wrong calculator for words.</li>
+        <li><strong>As a companion:</strong> an AI designed to be a friend or confidant. This is where parents should pay the most attention.</li>
+      </ul>
+      <p style="margin:0"><strong>It's already in their apps.</strong> AI chat is built into Snapchat, Instagram, WhatsApp and many games, so your teen may be using it without downloading anything new.</p>
+    </div>
+
+    <div class="bridge"><strong>The discernment connection:</strong> a chatbot is an "author" too. The same questions apply. Can it be wrong? Does it line up with Scripture? Who made it, and what do they want?</div>
 
     <div class="callout">
       <h3>Conversation starters (curious, not accusing)</h3>
@@ -561,6 +462,90 @@
   </div>
 </section>
 
+<section id="reading">
+  <div class="wrap">
+    <div class="eyebrow">Part two · Books</div>
+    <h2>This session is about books and technology. At a deeper level, it's about discernment.</h2>
+    <p class="lead">"Study to show thyself approved" (2 Timothy 2:15). The word means <em>be diligent</em>. Helping our kids read well is part of that diligence.</p>
+
+    <h3 style="margin-top:34px">Why stories matter, even for older kids</h3>
+    <div class="research">
+      <div class="card">
+        <blockquote>Brain scans showed that children who were read to more at home had stronger activity in areas for mental imagery and for understanding words and stories.</blockquote>
+        <p class="who"><a href="https://www.sciencedaily.com/releases/2015/04/150425215617.htm" target="_blank" rel="noopener">Cincinnati Children's study, 2015</a> (preschoolers ages 3–5)</p>
+      </div>
+      <div class="card">
+        <blockquote>"The single most important activity for building the knowledge required for eventual success in reading is reading aloud to children."</blockquote>
+        <p class="who"><em>Becoming a Nation of Readers</em>, 1985</p>
+      </div>
+      <div class="card">
+        <blockquote>"Across 70 experiments, novels did more to boost concern for and understanding of others."</blockquote>
+        <p class="who">Adam Grant, organizational psychologist, <a href="https://adamgrant.substack.com/p/the-case-for-reading-fiction" target="_blank" rel="noopener">"The Case for Reading Fiction," 2025</a></p>
+      </div>
+      <div class="card">
+        <blockquote>"When God contemplated all the possible ways… to transmit and preserve his revelation to the world, he chose a book."</blockquote>
+        <p class="who">John Piper</p>
+      </div>
+    </div>
+
+    <p class="story">Not just reading — <em>interacting</em>. There's a difference between reading the words on a page and engaging with your child about the words on the page.</p>
+
+    <h3 style="margin-top:34px">Why read fiction?</h3>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card"><h3>It shares timeless truth</h3><p style="margin:0;color:var(--ink-soft)">Great books show us human nature and how good triumphs over evil. We cheer for Quasimodo because we know what it's like to feel like an outcast. We love Frodo because he perseveres against great evil.</p></div>
+      <div class="card"><h3>It trains us to see through people</h3><p style="margin:0;color:var(--ink-soft)">A villain like Count Fosco in <em>The Woman in White</em> sticks with us because we've all met someone with a polished veneer who is deceitful underneath.</p></div>
+      <div class="card"><h3>It builds compassion</h3><p style="margin:0;color:var(--ink-soft)">On a screen, you observe Katniss or the March sisters. In a book, you get inside their heads. Slowly, that builds the capacity to see perspectives that aren't yours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="discern">
+  <div class="wrap">
+    <div class="eyebrow">The number one thing</div>
+    <h2>Discernment, discernment, discernment.</h2>
+    <p class="lead">This is what we most want to pass on to our kids as they read.</p>
+    <div class="discern-list">
+      <div class="discern-item"><div><h3>Authors can be wrong.</h3><p>Every book outside the Bible is written by a fallible person, even favorites like C.S. Lewis, Paul Tripp and A.W. Tozer. We always come to a book asking, "What does Scripture say?"</p></div></div>
+      <div class="discern-item"><div><h3>Viewpoints should align with Scripture.</h3><p>Look at morally gray characters, flaws, and good versus evil through the lens of Scripture. Does good triumph? Is the author clear about good and evil? Is a viewpoint that contradicts Scripture presented positively?</p></div></div>
+      <div class="discern-item"><div><h3>Good and evil should be clear.</h3><p>In <em>The Lord of the Rings</em>, it's clear who the good guy is and who the bad guy is. And it's clear <em>why</em>.</p></div></div>
+    </div>
+    <div class="bridge"><strong>The same questions work for tech.</strong> YouTubers, influencers, podcasters and AI chatbots are "authors" too. Teach your teen to ask of every creator: Can they be wrong? Does this line up with Scripture? Is it honest about good and evil?</div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">So what does this mean for your family?</div>
+    <h2>Six habits that build readers</h2>
+    <div class="habits">
+      <div class="card habit"><span class="n">Habit 1</span><h3>Read in front of your teen</h3><p>If we don't value reading, our kids won't either. Let them see you reading for pleasure: not for work or a Bible study, but because you chose it.</p><p>It doesn't matter much <em>what</em> you read. It matters that they see you do it, especially as phones take more of our downtime.</p></div>
+      <div class="card habit"><span class="n">Habit 2</span><h3>Read with your teen</h3><p>Talk about books together. "Buy your child a book every month and take them on a date to discuss it. Talk about the characters like they're real people. Argue about their decisions." <span style="font-size:.85rem">(shared on Instagram by @the_girl_zora_)</span></p><p>Not only Bible studies, but books about culture, classics and biographies.</p></div>
+      <div class="card habit"><span class="n">Habit 3</span><h3>Read to them, yes, even teens</h3><p>Use the voices. Read some books a little above their level. Don't stop when they learn to read on their own.</p><p>Reading aloud lets you talk through harder books, like <em>Pride and Prejudice</em> or <em>The Count of Monte Cristo</em>, that teens often get bogged down in alone.</p></div>
+      <div class="card habit"><span class="n">Habit 4</span><h3>Let them choose</h3><p>Encourage quality, but it's okay if your middle schooler loves graphic novels or your daughter loves fantasy. They don't have to like the same books you do.</p></div>
+      <div class="card habit"><span class="n">Habit 5</span><h3>Take them to the library</h3><p>Weekly when they're small, a couple of times a month as teens. Investing in reading doesn't stop in elementary school.</p></div>
+      <div class="card habit"><span class="n">Habit 6</span><h3>Start a family reading time</h3><p>Everyone sits together and reads their own book. Pair it with an evening screen cutoff: "We're all going to read now."</p></div>
+    </div>
+    <p class="story">"My dad read to us all the way until we were teenagers. I still remember those evenings as some of the best times of my life. And I remember the books too."</p>
+    <p class="note" style="font-size:.95rem">How much can 15 minutes a day add up to? John Piper's math: 200 words a minute × 15 minutes × 365 days ≈ 1.1 million words, about 12 substantial books a year. <a href="#reading-math">Try the calculator</a>.</p>
+  </div>
+</section>
+
+<section id="booklist">
+  <div class="wrap">
+    <div class="eyebrow">What should they read?</div>
+    <h2>A book list for families</h2>
+    <p class="lead">Tap a category to filter. Tap ☆ to save books to your family's list on this device.</p>
+    <div class="chips" id="bookChips" role="group" aria-label="Filter by category"></div>
+    <p class="book-why" id="bookWhy" aria-live="polite"></p>
+    <ul class="books" id="bookGrid"></ul>
+    <div class="list-bar">
+      <span id="savedCount">No books saved yet.</span>
+      <button class="btn ghost" id="showSaved">Show my list</button>
+      <button class="btn ghost" id="printBooks">Print</button>
+    </div>
+  </div>
+</section>
+
 <section id="scripture">
   <div class="wrap">
     <div class="eyebrow">Putting it in context</div>
@@ -595,14 +580,6 @@
       <li><span class="date">Website</span><div><a href="https://www.humanetech.com/" target="_blank" rel="noopener">Center for Humane Technology</a><p>Former tech insiders explaining how persuasive design works.</p></div></li>
       <li><span class="date">Website</span><div><a href="https://www.anxiousgeneration.com/" target="_blank" rel="noopener">The Anxious Generation movement</a><p>Tools for parents and schools working on the four norms together.</p></div></li>
     </ul>
-  </div>
-</section>
-
-<section class="help">
-  <div class="wrap">
-    <h2 style="color:var(--paper)">If your teen is struggling</h2>
-    <p>Struggling with a phone isn't a character flaw. It's a hard fight against powerful design. If your teen seems withdrawn, can't sleep, is secretive or seems hopeless, reach out to your pastor, a school counselor, your pediatrician or a Christian counselor.</p>
-    <p>In a crisis, call or text <strong><a href="tel:988">988</a></strong> (Suicide &amp; Crisis Lifeline, available 24/7).</p>
   </div>
 </section>
 
@@ -650,35 +627,48 @@
     hooksEl.appendChild(b);
   });
 
-  // ---------- home check-up ----------
-  const checks = [
-    "Phones (ours or our teen's) charge in bedrooms overnight.",
-    "Someone checks a phone within 10 minutes of waking up.",
-    "Phones come to the dinner table.",
-    "My teen gets upset or anxious when separated from their phone.",
-    "My teen has a streak or app they feel they can't miss a day of.",
-    "I'm not sure which apps my teen uses most or for how long.",
-    "I often check my phone while my teen is talking to me.",
-    "My teen rarely reads, plays outside or does a hobby without a screen.",
-    "My teen uses an AI chatbot and I don't know what they talk about."
-  ];
-  const listEl = document.getElementById("checkList");
-  checks.forEach((t, i) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<label><input type="checkbox" data-i="${i}"><span>${t}</span></label>`;
-    listEl.appendChild(li);
-  });
-  const bar = document.getElementById("meterBar");
-  const res = document.getElementById("checkResult");
-  function updateCheck() {
-    const n = listEl.querySelectorAll("input:checked").length;
-    bar.style.width = (n / checks.length * 100) + "%";
-    if (n === 0) res.textContent = "Check the statements that fit your family.";
-    else if (n <= 2) res.textContent = `${n} checked. You have good habits to build on. Pick one area to strengthen this month.`;
-    else if (n <= 5) res.textContent = `${n} checked. You're like most families in this room. Pick one or two changes below, and start with your own phone.`;
-    else res.textContent = `${n} checked. Technology is shaping a lot of your home's rhythm. No guilt — just a good moment to begin. Start small and start together.`;
-  }
-  listEl.addEventListener("change", updateCheck);
+  // ---------- book links (add more here) ----------
+  const bookLinks = {
+    "Irresistible": "https://adamalterauthor.com/irresistible/",
+    "How to Break Up with Your Phone": "https://catherineprice.com/screenlifebalance",
+    "The Anxious Generation": "https://www.jonathanhaidt.com/books",
+    "12 Truths Every Teen Can Trust": "https://store.paultripp.com/products/12-truths-every-teen-can-trust-hardcover",
+    "Confronting Christianity": "https://www.confrontingchristianity.org/",
+    "Jesus the King": "https://timothykeller.com/books/jesus-the-king",
+    "Atomic Habits": "https://jamesclear.com/atomic-habits",
+    "The Shallows: What the Internet Is Doing to Our Brains": "https://www.nicholascarr.com/?page_id=16",
+    "The Let Them Theory": "https://www.melrobbins.com/book/the-let-them-theory/",
+    "The Color of Compromise": "https://jemartisby.com/the-color-of-compromise/",
+    "Hidden Figures": "https://www.hiddenfigures.com/",
+    "The Immortal Life of Henrietta Lacks": "https://rebeccaskloot.com/the-immortal-life/",
+    "Adventures of Huckleberry Finn": "https://www.gutenberg.org/ebooks/76",
+    "Pride and Prejudice": "https://www.gutenberg.org/ebooks/1342",
+    "The Count of Monte Cristo": "https://www.gutenberg.org/ebooks/1184",
+    "Evidence Not Seen": "http://darlenerose.org/ministry%20news.html",
+    "Unbroken":"https://www.laurahillenbrandbooks.com/",
+    "All the Light We Cannot See": "https://www.penguinrandomhouse.com/authors/228247/anthony-doerr/",
+    "Jane Eyre": "https://www.gutenberg.org/ebooks/1260",
+    "A Tale of Two Cities": "https://www.gutenberg.org/ebooks/98",
+    "The Lord of the Rings": "https://www.tolkienestate.com/writing#thelordoftherings",
+    "The Stormlight Archive": "https://www.brandonsanderson.com/pages/the-stormlight-archive-series",
+    "A Wrinkle in Time": "https://madeleinelengle.com/a-wrinkle-in-time/",
+    "Fahrenheit 451": "https://raybradbury.com/books/",
+    "The Hunchback of Notre-Dame": "https://www.gutenberg.org/ebooks/2610",
+    "The Hunger Games": "https://www.thehungergames.com/",
+    "The Giver": "https://loislowry.com/books/",
+    "The Princess Bride": "https://en.wikipedia.org/wiki/The_Princess_Bride_(novel)",
+    "The Woman in White":"https://www.gutenberg.org/ebooks/583",
+    "Any Agatha Christie mystery": "https://www.agathachristie.com/stories",
+    "Skyward": "https://www.brandonsanderson.com/pages/skyward-series",
+    "Fablehaven": "https://brandonmull.com/category/fablehaven/",
+    "The Fellowship of the Ring": "https://www.tolkienestate.com/writing#thelordoftherings",
+    "The Chronicles of Narnia": "https://www.cslewis.com/discovering-narnia/",
+    "The Hobbit":"https://www.tolkienestate.com/writing#thehobbit",
+    "The Martian": "https://andyweirauthor.com/",
+    "Ender's Game": "https://www.hatrack.com/"
+  };
+  const linkTitle = (title, html) => bookLinks[title]
+    ? `<a href="${bookLinks[title]}" target="_blank" rel="noopener">${html}</a>` : html;
 
   // ---------- books ----------
   const books = [
@@ -732,7 +722,7 @@
     p.innerHTML = `
       <div class="book-head">
         <div class="spine" style="background:${b.color}" aria-hidden="true">${b.letter}</div>
-        <div><h3 style="font-size:1.6rem;margin-bottom:.15em">${b.title}</h3>
+        <div><h3 style="font-size:1.6rem;margin-bottom:.15em">${linkTitle(b.title, b.title)}</h3>
         <div class="meta"><em>${b.sub}</em><br>${b.meta}</div></div>
       </div>
       <p style="margin-top:16px">${b.summary}</p>
@@ -858,6 +848,7 @@
     ["Atomic Habits", "James Clear", "change"],
     ["How to Break Up with Your Phone", "Catherine Price", "change"],
     ["Irresistible", "Adam Alter (2017)", "think"],
+    ["The Anxious Generation", "Jonathan Haidt (2024)", "think"],
     ["The Shallows: What the Internet Is Doing to Our Brains", "Nicholas Carr (2010)", "think"],
     ["The Let Them Theory", "Mel Robbins", "think"],
     ["The Color of Compromise", "Jemar Tisby", "cultures"],
@@ -868,27 +859,25 @@
     ["The Count of Monte Cristo", "Alexandre Dumas", "hard"],
     ["Evidence Not Seen", "Darlene Deibler Rose", "hard"],
     ["Unbroken", "Laura Hillenbrand", "hard"],
-    ["All the Light We Cannot See", "Anthony Doerr", "hard", "Read together: set in WWII, with some disturbing scenes."],
+    ["All the Light We Cannot See", "Anthony Doerr", "hard"],
     ["Jane Eyre", "Charlotte Brontë", "grow"],
     ["A Tale of Two Cities", "Charles Dickens", "grow"],
-    ["The Book Thief", "Markus Zusak", "grow", "A truly unique perspective. Some language."],
     ["The Lord of the Rings", "J.R.R. Tolkien", "adversity"],
     ["The Stormlight Archive", "Brandon Sanderson", "adversity"],
-    ["Piranesi", "Susanna Clarke", "adversity"],
     ["A Wrinkle in Time", "Madeleine L'Engle", "adversity"],
     ["Fahrenheit 451", "Ray Bradbury", "point"],
     ["The Hunchback of Notre-Dame", "Victor Hugo", "point"],
-    ["The Hunger Games", "Suzanne Collins", "point", "Have you read it? Do you know what the author is trying to say?"],
+    ["The Hunger Games", "Suzanne Collins", "point"],
     ["The Giver", "Lois Lowry", "point"],
     ["The Princess Bride", "William Goldman", "fun"],
-    ["The Woman in White", "Wilkie Collins", "fun", "One of the first mystery novels!"],
+    ["The Woman in White", "Wilkie Collins", "fun"],
     ["Any Agatha Christie mystery", "Agatha Christie", "fun"],
     ["Skyward", "Brandon Sanderson", "fun"],
-    ["Fablehaven", "Brandon Mull", "fun", "Great for middle school."],
-    ["The Fellowship of the Ring", "J.R.R. Tolkien", "aloud", "What we're reading aloud right now."],
+    ["Fablehaven", "Brandon Mull", "fun"],
+    ["The Fellowship of the Ring", "J.R.R. Tolkien", "aloud"],
     ["The Hobbit", "J.R.R. Tolkien", "aloud"],
     ["The Chronicles of Narnia", "C.S. Lewis", "aloud"],
-    ["The Martian", "Andy Weir", "aloud", "Strong language; a classroom edition is available."],
+    ["The Martian", "Andy Weir", "aloud"],
     ["Ender's Game", "Orson Scott Card", "aloud"]
   ];
   const savedBooks = store.get("wwyts-books") || {};
@@ -910,7 +899,7 @@
     if (showSavedOnly) list = list.filter(x => savedBooks[x.i]);
     else if (activeCat !== "all") list = list.filter(x => x.b[2] === activeCat);
     whyEl.textContent = showSavedOnly ? "Your family's saved list." : (activeCat === "all" ? `${bookData.length} books across ${Object.keys(cats).length} categories.` : cats[activeCat][1]);
-    gridEl.innerHTML = list.map(({ b, i }) => `<li class="book"><div><div class="t">${esc(b[0])}</div><div class="a">${esc(b[1])}</div>${activeCat === "all" || showSavedOnly ? `<span class="tag">${esc(cats[b[2]][0])}</span>` : ""}${b[3] ? `<div class="note">${esc(b[3])}</div>` : ""}</div><button class="star" data-i="${i}" aria-pressed="${savedBooks[i] ? "true" : "false"}" aria-label="Save ${esc(b[0])}">${savedBooks[i] ? "★" : "☆"}</button></li>`).join("") || `<li class="book"><div>No books saved yet. Tap ☆ on any book.</div></li>`;
+    gridEl.innerHTML = list.map(({ b, i }) => `<li class="book"><div><div class="t">${linkTitle(b[0], esc(b[0]))}</div><div class="a">${esc(b[1])}</div>${activeCat === "all" || showSavedOnly ? `<span class="tag">${esc(cats[b[2]][0])}</span>` : ""}${b[3] ? `<div class="note">${esc(b[3])}</div>` : ""}</div><button class="star" data-i="${i}" aria-pressed="${savedBooks[i] ? "true" : "false"}" aria-label="Save ${esc(b[0])}">${savedBooks[i] ? "★" : "☆"}</button></li>`).join("") || `<li class="book"><div>No books saved yet. Tap ☆ on any book.</div></li>`;
     const n = Object.keys(savedBooks).length;
     document.getElementById("savedCount").textContent = n ? `${n} book${n > 1 ? "s" : ""} on your family's list.` : "No books saved yet.";
   }
