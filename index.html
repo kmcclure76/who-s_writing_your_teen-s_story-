@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who's Writing Your Teen's Story?</title>
+<meta name="description" content="A parent resource on technology, attention, and discernment: how apps are designed to hook teens, what to know about AI chatbots, and how to write a better story at home.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f2e9;
+    --paper-2: #efe7d8;
+    --card: #fffdf8;
+    --ink: #1f1b16;
+    --ink-soft: #5a5146;
+    --rule: #ddd2bf;
+    --accent: #b5482a;
+    --accent-soft: #f3dfd4;
+    --sage: #4f6b57;
+    --sage-soft: #dfe8df;
+    --shadow: 0 1px 2px rgba(40,30,20,.06), 0 6px 18px rgba(40,30,20,.06);
+    --radius: 14px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #171411; --paper-2: #1f1b17; --card: #24201b; --ink: #f1ebe1; --ink-soft: #b9ae9f;
+      --rule: #3a332b; --accent: #e07a58; --accent-soft: #3d2620; --sage: #8fb39a; --sage-soft: #24302a;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #171411; --paper-2: #1f1b17; --card: #24201b; --ink: #f1ebe1; --ink-soft: #b9ae9f;
+    --rule: #3a332b; --accent: #e07a58; --accent-soft: #3d2620; --sage: #8fb39a; --sage-soft: #24302a;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.25);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; }
+  a { color: var(--accent); }
+  img { max-width: 100%; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.15; margin: 0 0 .5em; }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; }
+  h3 { font-size: 1.25rem; font-weight: 600; }
+  p { margin: 0 0 1em; }
+  .eyebrow { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: .6em; }
+  .lead { font-size: 1.15rem; color: var(--ink-soft); max-width: 60ch; }
+
+  /* nav */
+  nav.top { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+  nav.top .wrap { display: flex; gap: 6px; overflow-x: auto; padding-top: 10px; padding-bottom: 10px; scrollbar-width: none; }
+  nav.top .wrap::-webkit-scrollbar { display: none; }
+  nav.top a { white-space: nowrap; text-decoration: none; color: var(--ink-soft); font-size: .88rem; font-weight: 500; padding: 6px 12px; border-radius: 999px; }
+  nav.top a:hover, nav.top a.active { background: var(--accent-soft); color: var(--accent); }
+
+  /* hero */
+  header.hero { padding: 72px 0 56px; border-bottom: 1px solid var(--rule); background:
+      repeating-linear-gradient(0deg, transparent 0 31px, color-mix(in srgb, var(--rule) 45%, transparent) 31px 32px); }
+  header.hero h1 { font-size: clamp(2.3rem, 7vw, 4.4rem); font-weight: 800; letter-spacing: -.01em; max-width: 14ch; }
+  header.hero h1 em { color: var(--accent); font-style: italic; }
+  header.hero .sub { font-size: 1.2rem; color: var(--ink-soft); max-width: 46ch; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .pill { background: var(--card); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; font-size: .9rem; }
+
+  section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
+  section:nth-of-type(even) { background: var(--paper-2); }
+
+  .card { background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px; }
+  .grid { display: grid; gap: 16px; }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .g3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+  /* big statement */
+  .contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+  @media (max-width: 640px) { .contrast { grid-template-columns: 1fr; } }
+  .contrast .card h3 { font-size: 1.5rem; }
+  .contrast .door { border-top: 5px solid var(--ink-soft); }
+  .contrast .heart { border-top: 5px solid var(--accent); }
+  .contrast ul { margin: 0; padding-left: 1.1em; }
+
+  .quote { font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 1.7rem); line-height: 1.35; border-left: 4px solid var(--accent); padding: 4px 0 4px 20px; margin: 28px 0; max-width: 40ch; }
+  .quote small { display: block; font-family: var(--sans); font-size: .9rem; color: var(--ink-soft); margin-top: 8px; }
+
+  /* flip cards */
+  .flip { perspective: 1000px; height: 210px; cursor: pointer; border: 0; background: none; padding: 0; text-align: left; font: inherit; color: inherit; }
+  .flip-inner { position: relative; width: 100%; height: 100%; transition: transform .5s; transform-style: preserve-3d; }
+  .flip.on .flip-inner { transform: rotateY(180deg); }
+  .face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: var(--radius); padding: 20px; border: 1px solid var(--rule); box-shadow: var(--shadow); display: flex; flex-direction: column; }
+  .front { background: var(--card); }
+  .front .icon { font-family: var(--serif); font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: auto; }
+  .front h3 { margin: 0; }
+  .front .hint { font-size: .8rem; color: var(--ink-soft); margin-top: 6px; }
+  .back { background: var(--accent); color: #fff; transform: rotateY(180deg); font-size: .95rem; }
+  .back strong { display: block; font-family: var(--serif); font-size: 1.1rem; margin-bottom: 6px; }
+  @media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 26px 0; }
+  .stat { background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px; }
+  .stat .num { font-family: var(--serif); font-size: 2.8rem; font-weight: 800; color: var(--accent); line-height: 1; }
+  .stat p { margin: 8px 0 0; font-size: .95rem; color: var(--ink-soft); }
+  .stat a { font-size: .8rem; }
+
+  .stat-group { margin-top: 34px; }
+  .stat-group > h3 { font-size: 1.15rem; margin-bottom: 0; }
+  .stat .src { display: inline-block; margin-top: 8px; }
+  .bars { display: grid; gap: 10px; margin-top: 14px; }
+  .bar-row { display: grid; grid-template-columns: 92px 1fr 44px; gap: 10px; align-items: center; font-size: .92rem; }
+  .bar-track { height: 14px; background: var(--paper-2); border-radius: 999px; overflow: hidden; border: 1px solid var(--rule); }
+  .bar-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+  .bar-row b { text-align: right; font-variant-numeric: tabular-nums; }
+  table.touch { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: .95rem; }
+  table.touch th, table.touch td { padding: 10px 8px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+  table.touch thead th { font-size: .8rem; color: var(--ink-soft); font-weight: 600; }
+  table.touch tbody th { font-weight: 500; }
+  table.touch td { font-family: var(--serif); font-weight: 800; font-size: 1.25rem; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .danger { border-left: 5px solid var(--accent); }
+  .danger p { color: var(--ink); }
+  .calc { margin-top: 18px; }
+  .calc label { font-weight: 600; display: block; margin-bottom: 8px; }
+  .calc input[type=range] { width: 100%; accent-color: var(--accent); }
+  .calc-out { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 16px; }
+  .calc-out > div { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 14px; }
+  .calc-out .big { font-family: var(--serif); font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; font-variant-numeric: tabular-nums; }
+  .calc-out small { color: var(--ink-soft); }
+  .note { font-size: .85rem; color: var(--ink-soft); margin-top: 14px; }
+
+  /* reading */
+  .research { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
+  .research .card p { margin: 0 0 10px; }
+  .research .card .who { font-size: .85rem; color: var(--ink-soft); }
+  .research .card blockquote { margin: 0 0 10px; font-family: var(--serif); font-size: 1.12rem; line-height: 1.4; }
+  .discern-list { display: grid; gap: 14px; margin-top: 24px; counter-reset: d; }
+  .discern-item { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: start; }
+  .discern-item::before { counter-increment: d; content: counter(d); width: 52px; height: 52px; border-radius: 50%; background: var(--sage); color: #fff; font-family: var(--serif); font-weight: 800; font-size: 1.5rem; display: grid; place-items: center; }
+  .discern-item h3 { margin-bottom: .2em; }
+  .discern-item p { margin: 0; color: var(--ink-soft); }
+  .bridge { margin-top: 26px; background: var(--accent-soft); border-radius: var(--radius); padding: 18px 20px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
+  .bridge strong { color: var(--accent); }
+  .habits { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+  .habit { position: relative; padding-top: 44px; }
+  .habit .n { position: absolute; top: 16px; left: 22px; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .habit h3 { margin-bottom: .3em; }
+  .habit p { margin: 0 0 .6em; color: var(--ink-soft); font-size: .97rem; }
+  .habit p:last-child { margin-bottom: 0; }
+  .story { margin-top: 20px; font-family: var(--serif); font-size: 1.15rem; line-height: 1.5; max-width: 62ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 14px; }
+  .chip { font: inherit; font-size: .88rem; border: 1px solid var(--rule); background: var(--card); color: var(--ink); padding: 7px 13px; border-radius: 999px; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .book-why { color: var(--ink-soft); margin: 4px 0 14px; min-height: 1.6em; }
+  .books { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .book { background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 14px 14px 14px 16px; display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: start; }
+  .book .t { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; line-height: 1.25; }
+  .book .a { font-size: .88rem; color: var(--ink-soft); }
+  .book .tag { display: inline-block; margin-top: 6px; font-size: .78rem; background: var(--paper-2); border-radius: 6px; padding: 2px 8px; color: var(--ink-soft); }
+  .book .note { margin-top: 6px; font-size: .85rem; color: var(--accent); }
+  .star { font: inherit; font-size: 1.2rem; line-height: 1; background: none; border: 1px solid var(--rule); border-radius: 50%; width: 36px; height: 36px; cursor: pointer; color: var(--ink-soft); }
+  .star[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .list-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
+  .list-bar span { color: var(--ink-soft); font-size: .95rem; }
+
+  /* self check */
+  .check-list { list-style: none; padding: 0; margin: 0; }
+  .check-list li { border-bottom: 1px solid var(--rule); }
+  .check-list label { display: flex; gap: 12px; align-items: flex-start; padding: 12px 4px; cursor: pointer; }
+  .check-list input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--accent); flex: none; }
+  .meter { height: 12px; background: var(--paper-2); border-radius: 999px; overflow: hidden; border: 1px solid var(--rule); margin: 18px 0 8px; }
+  .meter span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--sage), var(--accent)); transition: width .35s; }
+  .result { font-weight: 500; min-height: 3em; }
+
+  /* tabs */
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .tab { font: inherit; font-size: .92rem; font-weight: 500; border: 1px solid var(--rule); background: var(--card); color: var(--ink); padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+  .tab[aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .panel[hidden] { display: none; }
+  .book-head { display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
+  .spine { width: 56px; height: 84px; border-radius: 4px 8px 8px 4px; flex: none; box-shadow: inset 6px 0 0 rgba(0,0,0,.18), var(--shadow); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; font-family: var(--serif); color: #fff; font-weight: 800; font-size: 1.4rem; }
+  .meta { color: var(--ink-soft); font-size: .92rem; }
+  .verdicts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
+  .verdict { border-radius: 10px; padding: 14px; border: 1px solid var(--rule); background: var(--paper); font-size: .95rem; }
+  .verdict b { display: block; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+  .v-good b { color: var(--sage); } .v-bad b { color: #a06a12; } .v-ugly b { color: var(--accent); } .v-bal b { color: var(--ink); }
+
+  /* AI */
+  .ai-list { counter-reset: n; list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .ai-list li { counter-increment: n; background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px 18px 18px 64px; position: relative; }
+  .ai-list li::before { content: counter(n); position: absolute; left: 18px; top: 16px; width: 32px; height: 32px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-family: var(--serif); font-weight: 800; display: grid; place-items: center; }
+  .ai-list h3 { margin-bottom: .25em; font-size: 1.1rem; }
+  .ai-list p { margin: 0; color: var(--ink-soft); }
+  .callout { background: var(--sage-soft); border: 1px solid color-mix(in srgb, var(--sage) 40%, transparent); border-radius: var(--radius); padding: 18px 20px; margin-top: 20px; }
+  .callout h3 { color: var(--sage); }
+  .callout ul { margin: 0; padding-left: 1.1em; }
+
+  /* pause */
+  .pause { text-align: center; }
+  .pause-btn { font: inherit; font-family: var(--serif); font-size: 1.2rem; font-weight: 600; border: 0; background: var(--accent); color: #fff; padding: 16px 28px; border-radius: 999px; cursor: pointer; box-shadow: var(--shadow); }
+  .pause-btn:focus-visible, .tab:focus-visible, .flip:focus-visible, button:focus-visible { outline: 3px solid var(--sage); outline-offset: 3px; }
+  .qs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 26px; text-align: left; }
+  @media (max-width: 640px) { .qs { grid-template-columns: 1fr; } }
+  .q { opacity: .25; transform: translateY(8px); transition: all .45s; }
+  .q.show { opacity: 1; transform: none; }
+  .q .card { height: 100%; }
+  .q h3 { font-size: 1.6rem; color: var(--accent); }
+
+  /* plan */
+  .plan-group { margin-bottom: 20px; }
+  .plan-group h3 { font-size: 1.1rem; display: flex; align-items: baseline; gap: 8px; }
+  .plan-group h3 span { font-family: var(--sans); font-size: .8rem; color: var(--ink-soft); font-weight: 500; }
+  .plan-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+  .btn { font: inherit; font-size: .95rem; font-weight: 500; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); padding: 10px 18px; border-radius: 999px; cursor: pointer; }
+  .btn.ghost { background: transparent; color: var(--ink); }
+
+  /* scripture */
+  .verse { background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; }
+  .verse .ref { font-family: var(--serif); font-weight: 600; color: var(--accent); }
+  .verse p { margin: 6px 0 0; font-size: .95rem; color: var(--ink-soft); }
+
+  /* resources */
+  .res { list-style: none; margin: 0; padding: 0; }
+  .res li { display: grid; grid-template-columns: 96px 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .res .date { font-size: .85rem; color: var(--ink-soft); font-weight: 500; padding-top: 2px; }
+  .res a { font-weight: 600; }
+  .res p { margin: 2px 0 0; font-size: .95rem; color: var(--ink-soft); }
+  @media (max-width: 520px) { .res li { grid-template-columns: 1fr; gap: 2px; } }
+
+  .help { background: var(--ink); color: var(--paper); }
+  .help a { color: var(--paper); }
+  footer { padding: 36px 0 60px; font-size: .88rem; color: var(--ink-soft); }
+  .theme-toggle { position: fixed; right: 16px; bottom: 16px; z-index: 30; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: var(--card); color: var(--ink); cursor: pointer; box-shadow: var(--shadow); font-size: 1.1rem; }
+
+  @media print {
+    nav.top, .theme-toggle, .pause-btn, .plan-actions, header.hero .pill-row, .chips, .star, .list-bar { display: none !important; }
+    section { padding: 20px 0; background: none !important; }
+    .flip { height: auto; } .flip-inner { transform: none !important; } .face { position: static; } .back { transform: none; margin-top: 8px; }
+    .q { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Sections">
+  <div class="wrap">
+    <a href="#reading">Why read</a>
+    <a href="#discern">Discernment</a>
+    <a href="#how">Six habits</a>
+    <a href="#booklist">Book list</a>
+    <a href="#formation">Filters vs. formation</a>
+    <a href="#numbers">By the numbers</a>
+    <a href="#product">You are the product</a>
+    <a href="#check">Home check-up</a>
+    <a href="#ai">AI chatbots</a>
+    <a href="#books">Books</a>
+    <a href="#pause">Pause questions</a>
+    <a href="#plan">Family plan</a>
+    <a href="#scripture">Scripture</a>
+    <a href="#resources">Resources</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Parent Seminar · Technology &amp; Discernment</div>
+    <h1>Who's Writing Your Teen's <em>Story?</em></h1>
+    <p class="sub">Teaching discernment with books and tech. A take-home guide to raising readers, teaching discernment, and understanding how apps are built to hold our teens' attention.</p>
+    <div class="pill-row">
+      <span class="pill">For parents of teens</span>
+      <span class="pill">Faith-centered</span>
+      <span class="pill">Practical next steps</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="reading">
+  <div class="wrap">
+    <div class="eyebrow">Part one · Books</div>
+    <h2>This session is about books and technology. At a deeper level, it's about discernment.</h2>
+    <p class="lead">"Study to show thyself approved" (2 Timothy 2:15). The word means <em>be diligent</em>. Helping our kids read well is part of that diligence.</p>
+
+    <h3 style="margin-top:34px">Why stories matter, even for older kids</h3>
+    <div class="research">
+      <div class="card">
+        <blockquote>Brain scans showed that children who were read to more at home had stronger activity in areas for mental imagery and for understanding words and stories.</blockquote>
+        <p class="who"><a href="https://www.sciencedaily.com/releases/2015/04/150425215617.htm" target="_blank" rel="noopener">Cincinnati Children's study, 2015</a> (preschoolers ages 3–5)</p>
+      </div>
+      <div class="card">
+        <blockquote>"The single most important activity for building the knowledge required for eventual success in reading is reading aloud to children."</blockquote>
+        <p class="who"><em>Becoming a Nation of Readers</em>, 1985</p>
+      </div>
+      <div class="card">
+        <blockquote>"Across 70 experiments, novels did more to boost concern for and understanding of others."</blockquote>
+        <p class="who">Adam Grant, organizational psychologist, <a href="https://adamgrant.substack.com/p/the-case-for-reading-fiction" target="_blank" rel="noopener">"The Case for Reading Fiction," 2025</a></p>
+      </div>
+      <div class="card">
+        <blockquote>"When God contemplated all the possible ways… to transmit and preserve his revelation to the world, he chose a book."</blockquote>
+        <p class="who">John Piper</p>
+      </div>
+    </div>
+
+    <p class="story">Not just reading — <em>interacting</em>. There's a difference between reading the words on a page and engaging with your child about the words on the page.</p>
+
+    <h3 style="margin-top:34px">Why read fiction?</h3>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card"><h3>It shares timeless truth</h3><p style="margin:0;color:var(--ink-soft)">Great books show us human nature and how good triumphs over evil. We cheer for Quasimodo because we know what it's like to feel like an outcast. We love Frodo because he perseveres against great evil.</p></div>
+      <div class="card"><h3>It trains us to see through people</h3><p style="margin:0;color:var(--ink-soft)">A villain like Count Fosco in <em>The Woman in White</em> sticks with us because we've all met someone with a polished veneer who is deceitful underneath.</p></div>
+      <div class="card"><h3>It builds compassion</h3><p style="margin:0;color:var(--ink-soft)">On a screen, you observe Katniss or the March sisters. In a book, you get inside their heads. Slowly, that builds the capacity to see perspectives that aren't yours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="discern">
+  <div class="wrap">
+    <div class="eyebrow">The number one thing</div>
+    <h2>Discernment, discernment, discernment.</h2>
+    <p class="lead">This is what we most want to pass on to our kids as they read.</p>
+    <div class="discern-list">
+      <div class="discern-item"><div><h3>Authors can be wrong.</h3><p>Every book outside the Bible is written by a fallible person, even favorites like C.S. Lewis, Paul Tripp and A.W. Tozer. We always come to a book asking, "What does Scripture say?"</p></div></div>
+      <div class="discern-item"><div><h3>Viewpoints should align with Scripture.</h3><p>Look at morally gray characters, flaws, and good versus evil through the lens of Scripture. Does good triumph? Is the author clear about good and evil? Is a viewpoint that contradicts Scripture presented positively?</p></div></div>
+      <div class="discern-item"><div><h3>Good and evil should be clear.</h3><p>In <em>The Lord of the Rings</em>, it's clear who the good guy is and who the bad guy is. And it's clear <em>why</em>.</p></div></div>
+    </div>
+    <div class="bridge"><strong>The same questions work for tech.</strong> YouTubers, influencers, podcasters and AI chatbots are "authors" too. Teach your teen to ask of every creator: Can they be wrong? Does this line up with Scripture? Is it honest about good and evil?</div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">So what does this mean for your family?</div>
+    <h2>Six habits that build readers</h2>
+    <div class="habits">
+      <div class="card habit"><span class="n">Habit 1</span><h3>Read in front of your teen</h3><p>If we don't value reading, our kids won't either. Let them see you reading for pleasure: not for work or a Bible study, but because you chose it.</p><p>It doesn't matter much <em>what</em> you read. It matters that they see you do it, especially as phones take more of our downtime.</p></div>
+      <div class="card habit"><span class="n">Habit 2</span><h3>Read with your teen</h3><p>Talk about books together. "Buy your child a book every month and take them on a date to discuss it. Talk about the characters like they're real people. Argue about their decisions." <span style="font-size:.85rem">(shared on Instagram by @the_girl_zora_)</span></p><p>Not only Bible studies, but books about culture, classics and biographies.</p></div>
+      <div class="card habit"><span class="n">Habit 3</span><h3>Read to them, yes, even teens</h3><p>Use the voices. Read some books a little above their level. Don't stop when they learn to read on their own.</p><p>Reading aloud lets you talk through harder books, like <em>Pride and Prejudice</em> or <em>The Count of Monte Cristo</em>, that teens often get bogged down in alone.</p></div>
+      <div class="card habit"><span class="n">Habit 4</span><h3>Let them choose</h3><p>Encourage quality, but it's okay if your middle schooler loves graphic novels or your daughter loves fantasy. They don't have to like the same books you do.</p></div>
+      <div class="card habit"><span class="n">Habit 5</span><h3>Take them to the library</h3><p>Weekly when they're small, a couple of times a month as teens. Investing in reading doesn't stop in elementary school.</p></div>
+      <div class="card habit"><span class="n">Habit 6</span><h3>Start a family reading time</h3><p>Everyone sits together and reads their own book. Pair it with an evening screen cutoff: "We're all going to read now."</p></div>
+    </div>
+    <p class="story">"My dad read to us all the way until we were teenagers. I still remember those evenings as some of the best times of my life. And I remember the books too."</p>
+    <p class="note" style="font-size:.95rem">How much can 15 minutes a day add up to? John Piper's math: 200 words a minute × 15 minutes × 365 days ≈ 1.1 million words, about 12 substantial books a year. <a href="#reading-math">Try the calculator</a>.</p>
+  </div>
+</section>
+
+<section id="booklist">
+  <div class="wrap">
+    <div class="eyebrow">What should they read?</div>
+    <h2>A book list for families</h2>
+    <p class="lead">Tap a category to filter. Tap ☆ to save books to your family's list on this device.</p>
+    <div class="chips" id="bookChips" role="group" aria-label="Filter by category"></div>
+    <p class="book-why" id="bookWhy" aria-live="polite"></p>
+    <ul class="books" id="bookGrid"></ul>
+    <div class="list-bar">
+      <span id="savedCount">No books saved yet.</span>
+      <button class="btn ghost" id="showSaved">Show my list</button>
+      <button class="btn ghost" id="printBooks">Print</button>
+    </div>
+  </div>
+</section>
+
+<section id="formation">
+  <div class="wrap">
+    <div class="eyebrow">The big idea</div>
+    <h2>Filters guard the door. Habits shape the heart.</h2>
+    <p class="lead">Safeguards like filters, screen-time limits and accountability software matter, so keep them. But a filter only answers <em>what</em> our teens see. It can't answer <em>who they are becoming</em>.</p>
+    <div class="contrast">
+      <div class="card door">
+        <h3>Protection</h3>
+        <ul>
+          <li>Blocks harmful content</li>
+          <li>Limits time and access</li>
+          <li>Works while we're watching</li>
+          <li>Ends when they leave home</li>
+        </ul>
+      </div>
+      <div class="card heart">
+        <h3>Formation</h3>
+        <ul>
+          <li>Shapes desires and habits</li>
+          <li>Builds attention, patience, self-control</li>
+          <li>Works when no one is watching</li>
+          <li>Goes with them for life</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:24px">A teen can have a perfectly filtered phone and still be trained by it: to reach for it every few minutes, to need constant novelty, to measure worth in likes, and to escape every moment of boredom or discomfort. None of that is "bad content." All of it is formation.</p>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="eyebrow">By the numbers</div>
+    <h2>Teens already know something is off.</h2>
+    <p class="lead">These aren't just parents' worries. Many of the most striking numbers come from teens describing their own lives.</p>
+
+    <div class="stat-group">
+      <h3>How much they're on</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">4 in 10</div><p>teens say they're online "almost constantly."</p><a class="src" href="https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/" target="_blank" rel="noopener">Pew Research, Dec 2025</a></div>
+        <div class="stat"><div class="num">4.8 hrs</div><p>a day: the average teen's time on social media. Half spend 4 hours or more.</p><a class="src" href="https://news.gallup.com/poll/512576/teens-spend-average-hours-social-media-per-day.aspx" target="_blank" rel="noopener">Gallup, 2023</a></div>
+        <div class="stat"><div class="num">237</div><p>notifications a day for the typical 11–17-year-old, who picked up their phone 72+ times a day.</p><a class="src" href="https://www.commonsensemedia.org/kids-action/articles/what-teens-want-adults-to-know-about-their-relationships-with-smartphones" target="_blank" rel="noopener">Common Sense Media, 2023</a></div>
+      </div>
+      <div class="card" style="margin-bottom:16px">
+        <p style="margin:0"><strong>How often we touch our phones</strong></p>
+        <table class="touch">
+          <thead><tr><th scope="col"></th><th scope="col">Average user</th><th scope="col">Heavy user (top 10%)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Taps, swipes &amp; clicks a day</th><td>2,617</td><td>5,427</td></tr>
+            <tr><th scope="row">Separate phone sessions a day</th><td>76</td><td>132</td></tr>
+            <tr><th scope="row">Screen time a day</th><td>2.4 hrs (145 min)</td><td>3.75 hrs (225 min)</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Source: <a href="https://dscout.com/people-nerds/mobile-touches" target="_blank" rel="noopener">dscout study, 2016</a>, which tracked 94 Android users. Today's numbers are likely higher.</p>
+      </div>
+      <div class="card">
+        <p style="margin:0"><strong>Teens who use each app every day</strong></p>
+        <div class="bars" role="list" aria-label="Share of U.S. teens using each platform daily">
+          <div class="bar-row" role="listitem"><span>YouTube</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><b>~75%</b></div>
+          <div class="bar-row" role="listitem"><span>TikTok</span><div class="bar-track"><div class="bar-fill" style="width:61%"></div></div><b>61%</b></div>
+          <div class="bar-row" role="listitem"><span>Instagram</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><b>55%</b></div>
+          <div class="bar-row" role="listitem"><span>Snapchat</span><div class="bar-track"><div class="bar-fill" style="width:46%"></div></div><b>46%</b></div>
+          <div class="bar-row" role="listitem"><span>Facebook</span><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div><b>20%</b></div>
+        </div>
+        <p class="note">Source: <a href="https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/" target="_blank" rel="noopener">Pew Research, Dec 2025</a>. U.S. teens ages 13–17.</p>
+      </div>
+    </div>
+
+    <div class="stat-group">
+      <h3>What teens say it's doing to them</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">45%</div><p>say they spend too much time on social media, up from 27% in 2023.</p><a class="src" href="https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/" target="_blank" rel="noopener">Pew Research, Apr 2025</a></div>
+        <div class="stat"><div class="num">45%</div><p>say social media hurts their sleep. 40% say it hurts their productivity.</p><a class="src" href="https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/" target="_blank" rel="noopener">Pew Research, Apr 2025</a></div>
+        <div class="stat"><div class="num">48%</div><p>say social media has a mostly negative effect on people their age, up from 32% in 2022.</p><a class="src" href="https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/" target="_blank" rel="noopener">Pew Research, Apr 2025</a></div>
+        <div class="stat"><div class="num">44%</div><p>have already cut back on social media. Change is possible, and many teens want it.</p><a class="src" href="https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/" target="_blank" rel="noopener">Pew Research, Apr 2025</a></div>
+      </div>
+    </div>
+
+    <div class="stat-group">
+      <h3>What every parent should know</h3>
+      <div class="stats">
+        <div class="stat danger"><div class="num">137</div><p>reports of financial sextortion a day in 2025, over 50,000 in all. Tell your teen: <strong>"If this ever happens, come to us. You won't be in trouble."</strong></p><a class="src" href="https://us.missingkids.org/blog/2026/ncmec-releases-new-sextortion-data-2025" target="_blank" rel="noopener">NCMEC, 2026</a></div>
+        <div class="stat"><div class="num">1 in 8</div><p>young people know someone targeted by AI-generated fake nude images.</p><a class="src" href="https://www.thorn.org/press-releases/1-in-8-teens-know-someone-targeted-by-deepfake-nudes-new-report-finds/" target="_blank" rel="noopener">Thorn, Mar 2025</a></div>
+        <div class="stat"><div class="num">Age 12</div><p>is the average age teens first see pornography; 58% first came across it by accident.</p><a class="src" href="https://www.commonsensemedia.org/press-releases/new-report-reveals-truths-about-how-teens-engage-with-pornography" target="_blank" rel="noopener">Common Sense Media, 2023</a></div>
+      </div>
+    </div>
+
+    <div class="stat-group" id="reading-math">
+      <h3>Reading vs. the phone</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">40%</div><p>of American adults didn't read a single book in 2025.</p><a class="src" href="https://bookriot.com/american-reading-habits-2025/" target="_blank" rel="noopener">YouGov via Book Riot, Dec 2025</a></div>
+        <div class="stat"><div class="num">63%</div><p>of adults read four or fewer books last year: 25% read none and 38% read just one to four.</p><a class="src" href="https://data.verasight.io/culture/most-americans-read-a-few-books-or-none-at-all-last-year" target="_blank" rel="noopener">Verasight, Dec 2025</a></div>
+        <div class="stat"><div class="num">4+ hrs</div><p>a day: the average person's time on their phone.</p><a class="src" href="https://abc17news.com/stacker-lifestyle/2025/09/15/a-deep-dive-into-americans-mobile-habits-in-2025/" target="_blank" rel="noopener">eMarketer 2025, via Stacker</a></div>
+      </div>
+      <div class="card calc">
+        <label for="readMin">What if your family read for <span id="readMinOut">15</span> minutes a day?</label>
+        <input type="range" id="readMin" min="5" max="60" step="5" value="15">
+        <div class="calc-out" aria-live="polite">
+          <div><div class="big" id="calcBooks">12</div><small>books a year</small></div>
+          <div><div class="big" id="calcHours">91</div><small>hours a year of reading</small></div>
+          <div><div class="big" id="calcPct">6%</div><small>of 4 hours of daily phone time</small></div>
+        </div>
+        <p class="note">Estimate assumes a typical 300-page book takes about 7½ hours to read.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="product">
+  <div class="wrap">
+    <div class="eyebrow">The attention economy</div>
+    <h2>If the app is free, your teen is the product.</h2>
+    <p class="lead">Social apps make money by selling advertisers access to our attention and data. Advertisers are the customer. The more time your teen spends in the app, the more it earns, so every design choice pushes toward <em>more</em>.</p>
+    <div class="quote">"My experience is what I agree to attend to."<small>William James, 1890, a line Catherine Price builds on in <em>How to Break Up with Your Phone</em></small></div>
+    <h3>Spot the hook <span class="meta" style="font-family:var(--sans);font-weight:400">— tap a card to see how it works</span></h3>
+    <div class="grid g3" id="hooks"></div>
+    <p style="margin-top:22px"><strong>Try this at home:</strong> ask your teen to find three of these tricks in their favorite app. Teens push back on being controlled, but they hate being manipulated. This turns "parents vs. me" into "us vs. the people trying to use us."</p>
+  </div>
+</section>
+
+<section id="check">
+  <div class="wrap">
+    <div class="eyebrow">Interactive</div>
+    <h2>A quick home check-up</h2>
+    <p class="lead">Check anything that's true in your home right now. This is just a conversation starter, not a diagnosis.</p>
+    <div class="card">
+      <ul class="check-list" id="checkList"></ul>
+      <div class="meter" aria-hidden="true"><span id="meterBar"></span></div>
+      <p class="result" id="checkResult" aria-live="polite">Check the statements that fit your family.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="wrap">
+    <div class="eyebrow">The new frontier</div>
+    <h2>What parents need to know about AI chatbots</h2>
+    <p class="lead">Chatbots like ChatGPT, Character.AI, Snapchat's My AI and Meta AI can help with homework. But many are also built to act like a friend, and that's where parents need to pay attention.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">64%</div><p>of U.S. teens use AI chatbots; about 3 in 10 use them daily.</p><a href="https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/" target="_blank" rel="noopener">Pew Research, Dec 2025</a></div>
+      <div class="stat"><div class="num">72%</div><p>of teens have tried an AI "companion"; about half use one regularly.</p><a href="https://commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds" target="_blank" rel="noopener">Common Sense Media, Jul 2025</a></div>
+      <div class="stat"><div class="num">1 in 3</div><p>teens use AI companions for social connection, from friendship and emotional support to romantic role-play.</p><a href="https://commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds" target="_blank" rel="noopener">Common Sense Media, Jul 2025</a></div>
+    </div>
+
+    <ol class="ai-list">
+      <li><h3>Tools and companions are different</h3><p>Asking a chatbot to explain algebra is like using a calculator. An AI "companion" is designed to be a friend, confidant or even a boyfriend or girlfriend. It has a name, remembers past conversations and may message first.</p></li>
+      <li><h3>It's built for engagement, too</h3><p>Companions are always available, always patient and always agreeable. Real friendships include friction, disagreement and forgiveness, which is how we grow. A friend who never says no doesn't teach any of that.</p></li>
+      <li><h3>Teens can't easily tell real empathy from simulated empathy</h3><p>The American Psychological Association warned in 2025 that teens may trust AI characters that act like friends or mentors more than they should, and urged the industry not to repeat social media's mistakes.</p></li>
+      <li><h3>The risks are real, and regulators are responding</h3><p>Lawsuits have linked companion chatbots to teen self-harm and sexual content. In 2025 the FTC opened an inquiry into seven companies' companion bots, and Character.AI ended open-ended chats for users under 18. Twelve states had passed companion-chatbot laws by fall 2026.</p></li>
+      <li><h3>It's often hidden inside apps they already use</h3><p>AI chat is built into Snapchat, Instagram, WhatsApp and many games. Your teen may be using a chatbot without downloading anything new.</p></li>
+    </ol>
+
+    <div class="callout">
+      <h3>Conversation starters (curious, not accusing)</h3>
+      <ul>
+        <li>"Which AI tools do your friends use? What do they use them for?"</li>
+        <li>"Have you ever talked to an AI about something personal? How did it respond?"</li>
+        <li>"What's the difference between a friend who always agrees with you and one who tells you the truth?" (Proverbs 27:6)</li>
+        <li>"If an app is free and always available to listen, what do you think the company gets out of it?"</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="books">
+  <div class="wrap">
+    <div class="eyebrow">Three books worth knowing</div>
+    <h2>The good, the bad, the ugly — and the balanced</h2>
+    <p class="lead">Read together, they tell a story: <em>how</em> tech hooks us, <em>what</em> it's doing to kids, and <em>how</em> to break free.</p>
+    <div class="tabs" role="tablist" id="bookTabs"></div>
+    <div id="bookPanels"></div>
+  </div>
+</section>
+
+<section id="pause" class="pause">
+  <div class="wrap">
+    <div class="eyebrow">Teach the why, not just the rule</div>
+    <h2>Before you pick up the phone…</h2>
+    <p class="lead" style="margin:0 auto 24px">Catherine Price suggests three questions to ask before unlocking a phone. Simple enough for a whole family to memorize.</p>
+    <button class="pause-btn" id="pauseBtn">Pause and ask</button>
+    <div class="qs">
+      <div class="q"><div class="card"><h3>What for?</h3><p>What am I picking this up to do? A purpose, or just a reflex?</p></div></div>
+      <div class="q"><div class="card"><h3>Why now?</h3><p>Am I bored, anxious, avoiding something? What am I really feeling?</p></div></div>
+      <div class="q"><div class="card"><h3>What else?</h3><p>What could I do instead: read, call a friend, go outside, pray, rest?</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="eyebrow">Interactive</div>
+    <h2>Build your family's next steps</h2>
+    <p class="lead">Pick two or three, not all of them. Small, consistent changes beat big rules that don't last. Your choices are saved on this device so you can come back to them.</p>
+    <div class="card" id="planBox"></div>
+    <div class="plan-actions">
+      <button class="btn" id="printPlan">Print my plan</button>
+      <button class="btn ghost" id="clearPlan">Clear</button>
+    </div>
+  </div>
+</section>
+
+<section id="scripture">
+  <div class="wrap">
+    <div class="eyebrow">Putting it in context</div>
+    <h2>The question isn't whether our kids will be discipled.</h2>
+    <p class="lead">It's who, or what, is doing the discipling.</p>
+    <div class="grid g3" id="verses"></div>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <div class="eyebrow">Go deeper</div>
+    <h2>Resources</h2>
+    <h3 style="margin-top:10px">Recent (2025–2026)</h3>
+    <ul class="res">
+      <li><span class="date">Mar 2026</span><div><a href="https://www.aljazeera.com/news/2026/3/26/jury-finds-meta-youtube-liable-for-social-media-addiction-what-we-know" target="_blank" rel="noopener">Jury finds Meta and YouTube liable for social media addiction</a><p>A Los Angeles jury found the companies built addictive platforms that harmed a young user. Both said they would appeal.</p></div></li>
+      <li><span class="date">Jan 2026</span><div><a href="https://www.stern.nyu.edu/experience-stern/faculty-research/amazing-generation-how-choose-fun-and-freedom-screen-filled-world" target="_blank" rel="noopener"><em>The Amazing Generation</em> — Haidt &amp; Price</a><p>A version of <em>The Anxious Generation</em> written for kids in grades 5–8. A book to hand to your child.</p></div></li>
+      <li><span class="date">Dec 2025</span><div><a href="https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/" target="_blank" rel="noopener">Teens, Social Media and AI Chatbots 2025 — Pew Research</a><p>Current data on how often teens use social media and chatbots.</p></div></li>
+      <li><span class="date">Dec 2025</span><div><a href="https://aljazeera.com/news/2025/12/9/australias-social-media-ban-for-young-people-takes-effect" target="_blank" rel="noopener">Australia's under-16 social media ban takes effect</a><p>The first national ban, putting age checks on the platforms.</p></div></li>
+      <li><span class="date">Oct 2025</span><div><a href="https://abc7news.com/post/characterai-is-banning-minors-interacting-chatbots/18090030/" target="_blank" rel="noopener">Character.AI bans minors from open-ended chats (AP)</a><p>A major companion app pulls back on teen use.</p></div></li>
+      <li><span class="date">Sep 2025</span><div><a href="https://abc13.com/post/ftc-investigating-ai-companion-chatbots-amid-growing-concern-harm-kids/17800903/" target="_blank" rel="noopener">FTC investigates AI companion chatbots (CNN)</a><p>Federal inquiry into seven companies over risks to kids and teens.</p></div></li>
+      <li><span class="date">Jul 2025</span><div><a href="https://commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds" target="_blank" rel="noopener">Talk, Trust, and Trade-Offs — Common Sense Media</a><p>How and why teens use AI companions. Common Sense recommends no one under 18 use them.</p></div></li>
+      <li><span class="date">Jun 2025</span><div><a href="https://www.apa.org/topics/artificial-intelligence-machine-learning/health-advisory-ai-adolescent-well-being" target="_blank" rel="noopener">AI and Adolescent Well-being — APA Health Advisory</a><p>Psychologists' guidance on keeping AI safe for teens.</p></div></li>
+      <li><span class="date">Jun 2025</span><div><a href="https://www.goodreads.com/book/show/228474110-the-tech-exit" target="_blank" rel="noopener"><em>The Tech Exit</em> — Clare Morell</a><p>A practical plan for families raising kids without smartphones.</p></div></li>
+    </ul>
+    <h3 style="margin-top:30px">Classics &amp; ongoing help</h3>
+    <ul class="res">
+      <li><span class="date">Book</span><div><strong><em>The Tech-Wise Family</em> — Andy Crouch</strong><p>A Christian framework for putting technology in its proper place at home.</p></div></li>
+      <li><span class="date">Book</span><div><strong><em>12 Ways Your Phone Is Changing You</em> — Tony Reinke</strong><p>A theological look at what our phone habits do to us.</p></div></li>
+      <li><span class="date">Book</span><div><strong><em>You Are What You Love</em> — James K.A. Smith</strong><p>Why habits shape our hearts more than information does.</p></div></li>
+      <li><span class="date">Website</span><div><a href="https://www.waituntil8th.org/" target="_blank" rel="noopener">Wait Until 8th</a><p>A pledge parents sign together to delay smartphones, so no child is the only one waiting.</p></div></li>
+      <li><span class="date">Website</span><div><a href="https://www.humanetech.com/" target="_blank" rel="noopener">Center for Humane Technology</a><p>Former tech insiders explaining how persuasive design works.</p></div></li>
+      <li><span class="date">Website</span><div><a href="https://www.anxiousgeneration.com/" target="_blank" rel="noopener">The Anxious Generation movement</a><p>Tools for parents and schools working on the four norms together.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="help">
+  <div class="wrap">
+    <h2 style="color:var(--paper)">If your teen is struggling</h2>
+    <p>Struggling with a phone isn't a character flaw. It's a hard fight against powerful design. If your teen seems withdrawn, can't sleep, is secretive or seems hopeless, reach out to your pastor, a school counselor, your pediatrician or a Christian counselor.</p>
+    <p>In a crisis, call or text <strong><a href="tel:988">988</a></strong> (Suicide &amp; Crisis Lifeline, available 24/7).</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><em>Who's Writing Your Teen's Story? Teaching Discernment with Books and Tech</em> — parent seminar resource.</p>
+    <p>Statistics and news items are linked to their sources. Book summaries are brief overviews; read the books for the full arguments.</p>
+  </div>
+</footer>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">◐</button>
+
+<script>
+(function () {
+  // ---------- safe storage ----------
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  };
+
+  // ---------- hooks ----------
+  const hooks = [
+    ["∞", "Infinite scroll & autoplay", "No stopping cues", "There's never an end of the page or chapter, so the decision to stop is always yours to make, over and over."],
+    ["↻", "Pull-to-refresh", "A slot machine in your pocket", "Unpredictable rewards are the most habit-forming kind. You never know if this pull brings something new, so you keep pulling."],
+    ["🔥", "Streaks", "Penalizes a day off", "Snapchat and others count consecutive days. Breaking a streak feels like losing something, and like letting a friend down."],
+    ["●", "Red badges & notifications", "Interrupts on their schedule", "Red dots and buzzes create urgency and curiosity, pulling attention back on the app's timetable, not your teen's."],
+    ["♥", "Likes, views & followers", "Social worth as a number", "Teens are wired to care about peer approval. Counting it publicly turns friendship into a scoreboard."],
+    ["◎", "The algorithm", "Learns what holds them", "Feeds study every pause and replay, then serve more of whatever keeps them watching, often escalating to more extreme content."],
+    ["💬", "AI companions", "A friend with no friction", "Always available, always agreeable, always interested. Built to keep the conversation, and the user, going."]
+  ];
+  const hooksEl = document.getElementById("hooks");
+  hooks.forEach(([icon, title, short, detail]) => {
+    const b = document.createElement("button");
+    b.className = "flip";
+    b.setAttribute("aria-pressed", "false");
+    b.innerHTML = `<div class="flip-inner">
+      <div class="face front"><div class="icon" aria-hidden="true">${icon}</div><h3>${title}</h3><div class="hint">${short} · tap to flip</div></div>
+      <div class="face back"><strong>${title}</strong>${detail}</div></div>`;
+    b.addEventListener("click", () => {
+      const on = b.classList.toggle("on");
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    hooksEl.appendChild(b);
+  });
+
+  // ---------- home check-up ----------
+  const checks = [
+    "Phones (ours or our teen's) charge in bedrooms overnight.",
+    "Someone checks a phone within 10 minutes of waking up.",
+    "Phones come to the dinner table.",
+    "My teen gets upset or anxious when separated from their phone.",
+    "My teen has a streak or app they feel they can't miss a day of.",
+    "I'm not sure which apps my teen uses most or for how long.",
+    "I often check my phone while my teen is talking to me.",
+    "My teen rarely reads, plays outside or does a hobby without a screen.",
+    "My teen uses an AI chatbot and I don't know what they talk about."
+  ];
+  const listEl = document.getElementById("checkList");
+  checks.forEach((t, i) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<label><input type="checkbox" data-i="${i}"><span>${t}</span></label>`;
+    listEl.appendChild(li);
+  });
+  const bar = document.getElementById("meterBar");
+  const res = document.getElementById("checkResult");
+  function updateCheck() {
+    const n = listEl.querySelectorAll("input:checked").length;
+    bar.style.width = (n / checks.length * 100) + "%";
+    if (n === 0) res.textContent = "Check the statements that fit your family.";
+    else if (n <= 2) res.textContent = `${n} checked. You have good habits to build on. Pick one area to strengthen this month.`;
+    else if (n <= 5) res.textContent = `${n} checked. You're like most families in this room. Pick one or two changes below, and start with your own phone.`;
+    else res.textContent = `${n} checked. Technology is shaping a lot of your home's rhythm. No guilt — just a good moment to begin. Start small and start together.`;
+  }
+  listEl.addEventListener("change", updateCheck);
+
+  // ---------- books ----------
+  const books = [
+    {
+      id: "alter", short: "Irresistible", color: "#2f4a6b", letter: "A",
+      title: "Irresistible", sub: "The Rise of Addictive Technology and the Business of Keeping Us Hooked",
+      meta: "Adam Alter · 2017 · NYU Stern marketing professor",
+      summary: "Alter explains why so many products are hard to put down. He names six ingredients of \"behavioral addiction\": compelling goals, irresistible feedback, a sense of progress, escalating challenge, unresolved tension (like cliffhangers and autoplay) and social connection. His solution: redesign your environment so healthy choices are the easy ones.",
+      highlight: "He notes that many tech creators seemed to follow the drug dealer's rule: never get high on your own supply. He opens with Steve Jobs telling a reporter his own kids hadn't used the iPad.",
+      good: "The clearest explanation of how apps hook us. Great for understanding the attention economy.",
+      bad: "Written in 2017, before TikTok, Reels and AI chatbots. Leans on stories more than data in places.",
+      ugly: "Calling all heavy use \"addiction\" is debated by clinicians. Overusing the word can cause panic or make teens tune out.",
+      bal: "Use his framework, not his scariest stories. \"Change the environment, not just the willpower\" is wise advice for any home."
+    },
+    {
+      id: "haidt", short: "The Anxious Generation", color: "#b5482a", letter: "H",
+      title: "The Anxious Generation", sub: "How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness",
+      meta: "Jonathan Haidt · 2024 · NYU Stern social psychologist",
+      summary: "Haidt argues teen anxiety and depression rose sharply around 2012, especially among girls, as childhood shifted from \"play-based\" to \"phone-based.\" He names four harms (lost in-person time, lost sleep, fragmented attention, addiction) and four norms: no smartphones before high school, no social media before 16, phone-free schools, and more independence and free play.",
+      highlight: "His core claim: we've overprotected kids in the real world and underprotected them online. And though not religious himself, he devotes a chapter to spiritual practices like shared ritual, silence, awe and forgiveness, which the church already practices.",
+      good: "A clear plan. The four norms work best when families agree on them together, so no kid is the only one without a phone.",
+      bad: "Much of the evidence is correlational. In a Nature review, psychologist Candice Odgers argued the research shows mixed and mostly small effects.",
+      ugly: "The statistics on teen self-harm are sobering. Some families in the room may be living them right now.",
+      bal: "Experts debate how much phones cause the crisis, but few dispute that lost sleep, less face-to-face time and constant interruption are bad for kids. His advice carries little risk even if he's only partly right."
+    },
+    {
+      id: "price", short: "How to Break Up with Your Phone", color: "#4f6b57", letter: "P",
+      title: "How to Break Up with Your Phone", sub: "The 30-Day Plan to Take Back Your Life",
+      meta: "Catherine Price · 2018 · science journalist",
+      summary: "A short, practical book. Part one explains how phones are designed to hook us and what they do to attention, memory and sleep. Part two is a 30-day plan to reset your relationship with your phone. The goal isn't quitting tech; it's using it on purpose.",
+      highlight: "Her three questions before picking up the phone: What for? Why now? What else? She has since co-written The Amazing Generation with Haidt for kids.",
+      good: "Warm, practical and non-judgmental. Written for adults, so it's the best book for parents to model change first.",
+      bad: "It's a self-help book for adults, not teens, and the app landscape has changed since 2018.",
+      ugly: "Some of the brain science (dopamine, shrinking attention spans) is simplified compared with the research.",
+      bal: "Treat it as a parent's workbook. Do the 30 days yourself, then invite your teen into a version of it."
+    }
+  ];
+  const tabsEl = document.getElementById("bookTabs");
+  const panelsEl = document.getElementById("bookPanels");
+  books.forEach((b, i) => {
+    const t = document.createElement("button");
+    t.className = "tab"; t.role = "tab"; t.id = "tab-" + b.id;
+    t.setAttribute("aria-controls", "panel-" + b.id);
+    t.setAttribute("aria-selected", i === 0 ? "true" : "false");
+    t.textContent = b.short;
+    tabsEl.appendChild(t);
+    const p = document.createElement("div");
+    p.className = "panel card"; p.id = "panel-" + b.id; p.setAttribute("role", "tabpanel");
+    p.setAttribute("aria-labelledby", t.id);
+    if (i !== 0) p.hidden = true;
+    p.innerHTML = `
+      <div class="book-head">
+        <div class="spine" style="background:${b.color}" aria-hidden="true">${b.letter}</div>
+        <div><h3 style="font-size:1.6rem;margin-bottom:.15em">${b.title}</h3>
+        <div class="meta"><em>${b.sub}</em><br>${b.meta}</div></div>
+      </div>
+      <p style="margin-top:16px">${b.summary}</p>
+      <p style="margin:0"><strong>Worth remembering:</strong> ${b.highlight}</p>
+      <div class="verdicts">
+        <div class="verdict v-good"><b>The good</b>${b.good}</div>
+        <div class="verdict v-bad"><b>The bad</b>${b.bad}</div>
+        <div class="verdict v-ugly"><b>The ugly</b>${b.ugly}</div>
+        <div class="verdict v-bal"><b>Balanced</b>${b.bal}</div>
+      </div>`;
+    panelsEl.appendChild(p);
+    t.addEventListener("click", () => {
+      tabsEl.querySelectorAll(".tab").forEach(x => x.setAttribute("aria-selected", "false"));
+      panelsEl.querySelectorAll(".panel").forEach(x => x.hidden = true);
+      t.setAttribute("aria-selected", "true"); p.hidden = false;
+    });
+  });
+
+  // ---------- pause ----------
+  const pauseBtn = document.getElementById("pauseBtn");
+  pauseBtn.addEventListener("click", () => {
+    const qs = document.querySelectorAll(".q");
+    qs.forEach(q => q.classList.remove("show"));
+    qs.forEach((q, i) => setTimeout(() => q.classList.add("show"), 250 + i * 700));
+  });
+
+  // ---------- plan ----------
+  const plan = [
+    ["Go first", "our own example", [
+      "Parents keep phones away during meals and conversations",
+      "Parents charge phones outside the bedroom too",
+      "I'll tell my teen one phone habit I'm changing"
+    ]],
+    ["Delay and stage", "add freedom as maturity grows", [
+      "Basic phone before a smartphone",
+      "No social media before 16",
+      "Agree on a plan with two or three other families"
+    ]],
+    ["Design the home", "make the good choice the easy one", [
+      "All devices charge outside bedrooms overnight",
+      "Phone-free dinners",
+      "A weekly tech Sabbath (a few screen-free hours together)",
+      "Turn off non-essential notifications on everyone's phones"
+    ]],
+    ["Replace, don't just remove", "fill the time with something better", [
+      "A family read-aloud or reading time",
+      "A hobby, sport or skill to build",
+      "Serve together at church or in the community",
+      "More unstructured time outdoors with friends"
+    ]],
+    ["Talk about the why", "aim for self-government", [
+      "Find the design tricks in a favorite app together",
+      "Memorize: What for? Why now? What else?",
+      "Ask my teen which AI tools they use and how",
+      "Write a family tech agreement together"
+    ]]
+  ];
+  const saved = store.get("wwyts-plan") || {};
+  const planBox = document.getElementById("planBox");
+  plan.forEach(([title, sub, items], gi) => {
+    const g = document.createElement("div");
+    g.className = "plan-group";
+    g.innerHTML = `<h3>${title} <span>${sub}</span></h3><ul class="check-list">` +
+      items.map((it, ii) => {
+        const key = gi + "-" + ii;
+        return `<li><label><input type="checkbox" data-k="${key}" ${saved[key] ? "checked" : ""}><span>${it}</span></label></li>`;
+      }).join("") + "</ul>";
+    planBox.appendChild(g);
+  });
+  planBox.addEventListener("change", e => {
+    const k = e.target.dataset.k; if (!k) return;
+    const cur = store.get("wwyts-plan") || {};
+    if (e.target.checked) cur[k] = true; else delete cur[k];
+    store.set("wwyts-plan", cur);
+  });
+  document.getElementById("clearPlan").addEventListener("click", () => {
+    planBox.querySelectorAll("input").forEach(i => i.checked = false);
+    store.set("wwyts-plan", {});
+  });
+  document.getElementById("printPlan").addEventListener("click", () => window.print());
+
+  // ---------- scripture ----------
+  const verses = [
+    ["Hebrews 12:1–2", "Jesus is the founder and perfecter of our faith. He is the author of our teens' story."],
+    ["1 Corinthians 6:12", "\"All things are lawful for me,\" but not all things are helpful, and I will not be dominated by anything."],
+    ["Romans 12:1–2", "Don't be conformed to this world, but be transformed by the renewal of your mind."],
+    ["Ephesians 5:15–17", "Walk wisely, making the best use of the time."],
+    ["Proverbs 4:23", "Guard your heart, for from it flow the springs of life."],
+    ["Philippians 4:8", "Whatever is true, honorable, just, pure, lovely — think about these things."],
+    ["Psalm 115:4–8", "Those who make idols become like them. We become like what we give ourselves to."],
+    ["Psalm 46:10", "Be still, and know that I am God. Stillness makes room for God."],
+    ["Mark 1:35", "Jesus rose early and went to a desolate place to pray. He modeled being unreachable."],
+    ["Deuteronomy 6:6–7", "Teach them when you sit, walk, lie down and rise: the ordinary moments phones tend to fill."],
+    ["Proverbs 27:6", "Faithful are the wounds of a friend. Real friends tell the truth, unlike an always-agreeable chatbot."],
+    ["Galatians 5:22–23", "The fruit of the Spirit includes self-control: fruit to grow, not just a rule to enforce."]
+  ];
+  const vEl = document.getElementById("verses");
+  verses.forEach(([ref, text]) => {
+    const d = document.createElement("div");
+    d.className = "verse";
+    d.innerHTML = `<div class="ref">${ref}</div><p>${text}</p>`;
+    vEl.appendChild(d);
+  });
+
+  // ---------- book list ----------
+  const cats = {
+    faith: ["Deepen their faith", "Books that deepen their faith."],
+    change: ["Challenge them to change", "Books that challenge them to change."],
+    think: ["Make them think", "Books that make them think, including about technology."],
+    cultures: ["Different cultures", "Books about people from different cultures and backgrounds."],
+    circ: ["Different circumstances", "Books about people in different social circumstances."],
+    hard: ["Hard situations", "Books about people dealing with death, loss and oppression."],
+    grow: ["Characters who grow", "Books where the characters have to grow."],
+    adversity: ["Overcoming adversity", "Books where characters overcome challenges and adversity."],
+    point: ["A point to make", "Books that have a point to make. Do you know what the author is trying to say?"],
+    fun: ["Just for fun", "Read for fun!"],
+    aloud: ["Our read-aloud favorites", "Books our family has loved reading aloud, right up through the teen years."]
+  };
+  const bookData = [
+    ["12 Truths Every Teen Can Trust", "Paul David Tripp", "faith"],
+    ["Confronting Christianity", "Rebecca McLaughlin", "faith"],
+    ["Jesus the King", "Timothy Keller", "faith"],
+    ["Atomic Habits", "James Clear", "change"],
+    ["How to Break Up with Your Phone", "Catherine Price", "change"],
+    ["Irresistible", "Adam Alter (2017)", "think"],
+    ["The Shallows: What the Internet Is Doing to Our Brains", "Nicholas Carr (2010)", "think"],
+    ["The Let Them Theory", "Mel Robbins", "think"],
+    ["The Color of Compromise", "Jemar Tisby", "cultures"],
+    ["Hidden Figures", "Margot Lee Shetterly", "cultures"],
+    ["The Immortal Life of Henrietta Lacks", "Rebecca Skloot", "circ"],
+    ["Adventures of Huckleberry Finn", "Mark Twain", "circ"],
+    ["Pride and Prejudice", "Jane Austen", "circ"],
+    ["The Count of Monte Cristo", "Alexandre Dumas", "hard"],
+    ["Evidence Not Seen", "Darlene Deibler Rose", "hard"],
+    ["Unbroken", "Laura Hillenbrand", "hard"],
+    ["All the Light We Cannot See", "Anthony Doerr", "hard", "Read together: set in WWII, with some disturbing scenes."],
+    ["Jane Eyre", "Charlotte Brontë", "grow"],
+    ["A Tale of Two Cities", "Charles Dickens", "grow"],
+    ["The Book Thief", "Markus Zusak", "grow", "A truly unique perspective. Some language."],
+    ["The Lord of the Rings", "J.R.R. Tolkien", "adversity"],
+    ["The Stormlight Archive", "Brandon Sanderson", "adversity"],
+    ["Piranesi", "Susanna Clarke", "adversity"],
+    ["A Wrinkle in Time", "Madeleine L'Engle", "adversity"],
+    ["Fahrenheit 451", "Ray Bradbury", "point"],
+    ["The Hunchback of Notre-Dame", "Victor Hugo", "point"],
+    ["The Hunger Games", "Suzanne Collins", "point", "Have you read it? Do you know what the author is trying to say?"],
+    ["The Giver", "Lois Lowry", "point"],
+    ["The Princess Bride", "William Goldman", "fun"],
+    ["The Woman in White", "Wilkie Collins", "fun", "One of the first mystery novels!"],
+    ["Any Agatha Christie mystery", "Agatha Christie", "fun"],
+    ["Skyward", "Brandon Sanderson", "fun"],
+    ["Fablehaven", "Brandon Mull", "fun", "Great for middle school."],
+    ["The Fellowship of the Ring", "J.R.R. Tolkien", "aloud", "What we're reading aloud right now."],
+    ["The Hobbit", "J.R.R. Tolkien", "aloud"],
+    ["The Chronicles of Narnia", "C.S. Lewis", "aloud"],
+    ["The Martian", "Andy Weir", "aloud", "Strong language; a classroom edition is available."],
+    ["Ender's Game", "Orson Scott Card", "aloud"]
+  ];
+  const savedBooks = store.get("wwyts-books") || {};
+  let activeCat = "all", showSavedOnly = false;
+  const chipsEl = document.getElementById("bookChips");
+  const gridEl = document.getElementById("bookGrid");
+  const whyEl = document.getElementById("bookWhy");
+  [["all", "All books"], ...Object.entries(cats).map(([k, v]) => [k, v[0]])].forEach(([k, label]) => {
+    const c = document.createElement("button");
+    c.className = "chip"; c.textContent = label; c.dataset.cat = k;
+    c.setAttribute("aria-pressed", k === "all" ? "true" : "false");
+    c.addEventListener("click", () => { activeCat = k; showSavedOnly = false; renderBooks(); });
+    chipsEl.appendChild(c);
+  });
+  function esc(s) { return s.replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch])); }
+  function renderBooks() {
+    chipsEl.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", (!showSavedOnly && c.dataset.cat === activeCat) ? "true" : "false"));
+    let list = bookData.map((b, i) => ({ b, i }));
+    if (showSavedOnly) list = list.filter(x => savedBooks[x.i]);
+    else if (activeCat !== "all") list = list.filter(x => x.b[2] === activeCat);
+    whyEl.textContent = showSavedOnly ? "Your family's saved list." : (activeCat === "all" ? `${bookData.length} books across ${Object.keys(cats).length} categories.` : cats[activeCat][1]);
+    gridEl.innerHTML = list.map(({ b, i }) => `<li class="book"><div><div class="t">${esc(b[0])}</div><div class="a">${esc(b[1])}</div>${activeCat === "all" || showSavedOnly ? `<span class="tag">${esc(cats[b[2]][0])}</span>` : ""}${b[3] ? `<div class="note">${esc(b[3])}</div>` : ""}</div><button class="star" data-i="${i}" aria-pressed="${savedBooks[i] ? "true" : "false"}" aria-label="Save ${esc(b[0])}">${savedBooks[i] ? "★" : "☆"}</button></li>`).join("") || `<li class="book"><div>No books saved yet. Tap ☆ on any book.</div></li>`;
+    const n = Object.keys(savedBooks).length;
+    document.getElementById("savedCount").textContent = n ? `${n} book${n > 1 ? "s" : ""} on your family's list.` : "No books saved yet.";
+  }
+  gridEl.addEventListener("click", e => {
+    const s = e.target.closest(".star"); if (!s) return;
+    const i = s.dataset.i;
+    if (savedBooks[i]) delete savedBooks[i]; else savedBooks[i] = true;
+    store.set("wwyts-books", savedBooks);
+    renderBooks();
+  });
+  document.getElementById("showSaved").addEventListener("click", () => { showSavedOnly = true; renderBooks(); });
+  document.getElementById("printBooks").addEventListener("click", () => window.print());
+  renderBooks();
+
+  // ---------- reading calculator ----------
+  const readMin = document.getElementById("readMin");
+  function updateCalc() {
+    const m = Number(readMin.value);
+    const hours = m * 365 / 60;
+    document.getElementById("readMinOut").textContent = m;
+    document.getElementById("calcBooks").textContent = Math.round(hours / 7.5);
+    document.getElementById("calcHours").textContent = Math.round(hours);
+    document.getElementById("calcPct").textContent = Math.round(m / 240 * 100) + "%";
+  }
+  readMin.addEventListener("input", updateCalc);
+  updateCalc();
+
+  // ---------- nav highlight ----------
+  const links = [...document.querySelectorAll("nav.top a")];
+  const targets = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id));
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    targets.forEach(t => io.observe(t));
+  }
+
+  // ---------- theme ----------
+  const root = document.documentElement;
+  const savedTheme = store.get("wwyts-theme");
+  if (savedTheme) root.setAttribute("data-theme", savedTheme);
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    const dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    store.set("wwyts-theme", next);
+  });
+})();
+</script>
+</body>
+</html>
